@@ -5,27 +5,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.indienews.Article
+import com.example.indienews.ArticleAdapter
 import com.example.indienews.R
+import com.example.indienews.ui.BaseFragment
+import java.net.URL
 
-class NewFragment : Fragment() {
 
-    private lateinit var homeViewModel: NewViewModel
+class NewFragment : BaseFragment() {
+
+    private lateinit var newViewModel: NewViewModel
+
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
+        newViewModel =
                 ViewModelProviders.of(this).get(NewViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        val root = inflater.inflate(R.layout.fragment_new, container, false)
+        newViewModel.text.observe(viewLifecycleOwner, Observer {
+
         })
+        var url = URL("http://192.168.2.24/php/scripts/getNew.php");
+        parseXML(url);
+
+        var ArticleAdapter adapter = new ArticleAdapter(articleArrayList);
+
         return root
     }
 }

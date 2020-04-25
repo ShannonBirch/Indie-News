@@ -13,10 +13,12 @@
   if($articlesResult->num_rows>0){
     while($row=$articlesResult->fetch_assoc()){
       $output.="<article>
-
-                  <headline>" . $row["headline"] . "</headline>
-                  <body>" . $row["body"] . "</body>
-                  <post_time>" . $row["post_time"] . "</post_time>
+                  <article_id>" . $row["article_id"] . "</article_id>
+                  <headline>"   . $row["headline"] . "</headline>
+                  <blurb>"      . $row["blurb"] . "</blurb>
+                  <thumbnail>"  . $row["thumbnail"] . "</thumbnail>
+                  <body>"       . $row["body"] . "</body>
+                  <post_time>"  . $row["post_time"] . "</post_time>
                 </article>";
     }
 
