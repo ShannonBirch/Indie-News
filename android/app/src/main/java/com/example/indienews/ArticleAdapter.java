@@ -26,7 +26,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
     }
 
-    ArticleAdapter(ArrayList<Article> articles){
+    public ArticleAdapter(ArrayList<Article> articles){
         this.articles = articles;
     }
 

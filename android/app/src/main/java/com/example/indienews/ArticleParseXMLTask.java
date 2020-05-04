@@ -1,6 +1,11 @@
 package com.example.indienews;
 
+import android.content.Context;
 import android.util.Log;
+import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -8,21 +13,32 @@ import org.w3c.dom.NodeList;
 import java.util.ArrayList;
 
 public class ArticleParseXMLTask extends DownloadXMLTask {
-    protected ArrayList<Article> articleArrayList = new ArrayList<Article>();
+    private ArrayList<Article> articleArrayList = new ArrayList<Article>();
 
+    public ArticleParseXMLTask(View v, Context c){
+        view = v;
+        context = c;
+    }
     @Override
     protected void onPostExecute(Boolean bool){  //Parse the XML file and update view
+        Log.d("tag", "post Execute");
+        articleArrayList.clear();
         NodeList nodelist = xmlFile.getElementsByTagName("article");
 
         for(int i=0;i<nodelist.getLength();i++){
             Element articleElement = (Element) nodelist.item(i);
 
-
             articleArrayList.add(elementToArticle(articleElement));
+            Log.d("Article", "Added");
         }
+        Log.d("Updating the view", "Wish me luck");
+        updateView();
+
     }
 
     public ArrayList<Article> getArticleArrayList(){
+
+        Log.d("getList list size: ", ""+articleArrayList.size());
         return articleArrayList;
     }
 
@@ -36,6 +52,14 @@ public class ArticleParseXMLTask extends DownloadXMLTask {
 
 
         return tempArticle;
+    }
+
+    private void updateView(){
+        RecyclerView rv = (RecyclerView) view.findViewById(R.id.recycler_view);
+        LinearLayoutManager llm = new LinearLayoutManager(context);
+        ArticleAdapter adapter = new ArticleAdapter((articleArrayList));
+        rv.setLayoutManager(llm);
+        rv.setAdapter(adapter);
     }
 }
 
