@@ -29,11 +29,9 @@ public class ArticleParseXMLTask extends DownloadXMLTask {
             Element articleElement = (Element) nodelist.item(i);
 
             articleArrayList.add(elementToArticle(articleElement));
-            Log.d("Article", "Added");
         }
-        Log.d("Updating the view", "Wish me luck");
-        updateView();
 
+        updateView();
     }
 
     public ArrayList<Article> getArticleArrayList(){
@@ -46,9 +44,13 @@ public class ArticleParseXMLTask extends DownloadXMLTask {
         Article tempArticle = new Article(); //Create a new empty Article
 
         tempArticle.setId(Long.parseLong(aE.getElementsByTagName("article_id").item(0).getTextContent()));
+        tempArticle.setAuthor("Darragh Kelly"); //Todo: Add Authors to database
         tempArticle.setBlurb(aE.getElementsByTagName("blurb").item(0).getTextContent());
         tempArticle.setHeadline(aE.getElementsByTagName("headline").item(0).getTextContent());
-        tempArticle.setThumbnail(aE.getElementsByTagName("thumbnail").item(0).getTextContent());
+
+        String thumbnailLoc = "http://192.168.2.24/resources/pics/thumbs/" +
+                                aE.getElementsByTagName("thumbnail").item(0).getTextContent(); //To
+        tempArticle.setThumbnail(thumbnailLoc);
 
 
         return tempArticle;

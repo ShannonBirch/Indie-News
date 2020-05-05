@@ -4,11 +4,39 @@
     android:id="@+id/card_view"
     android:layout_gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="100dp"
+    android:layout_marginBottom="5dp"
     card_view:cardCornerRadius="4dp">
-
-    <TextView
-        android:id="@+id/headline_text"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/article_thumbnail"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <TextView
+            android:id="@+id/headline_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/article_thumbnail"
+            android:layout_alignParentTop="true"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/blurb_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/article_thumbnail"
+            android:layout_below="@+id/headline_text"
+            />
+
+    </RelativeLayout>
+
 </androidx.cardview.widget.CardView>
