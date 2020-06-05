@@ -2,9 +2,10 @@ package com.example.indienews;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Article {
+public class Article implements Serializable {
     private Long    id;
     private String  Author; //ToDo: Author as object type?
     private String  headline;
