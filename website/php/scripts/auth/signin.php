@@ -40,6 +40,7 @@ include('secure/loginTools.php');
 
       $tokenResult = $sConn->query($addTokenSQL);
       if($tokenResult){
+        $sConn->close();
         $_SESSION['email'] = $email;
         $_SESSION['token'] = $token; //By not setting last checked the next loginCheck will make sure the token worked
         header("location: http://localhost" . $redirect); //Redirect back to the original page
@@ -50,5 +51,6 @@ include('secure/loginTools.php');
   /*
     Redirect to the login screen
   */
+  $sConn->close();
   header("location: http://localhost/login.php?error=u&redirect=" . $redirect);
   exit;

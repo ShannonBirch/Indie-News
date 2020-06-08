@@ -13,6 +13,8 @@
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
         <form action="php/scripts/auth/register.php" method="post">
+          <!-- TODO: Error handling on redirects -->
+            <input type="hidden" name="redirect" value="<?php echo($_GET['redirect']) ?>" >
             <div class="form-group">
                 <label>Email</label>
                 <input type="text" name="email" class="form-control" required="required">

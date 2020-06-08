@@ -32,6 +32,6 @@ $rConn->close();
 echo "Registered";
 }
 
-// destroySession();
+destroySession();
 // setToken();
-quickRegister("dude", "Dude2");
+// quickRegister("dude", "Dude2");
