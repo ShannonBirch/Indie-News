@@ -1,9 +1,6 @@
 <?php
   include('php/scripts/auth/loginCheck.php');
-  if(loginCheck()){
-    header("Location: http://localhost" . $_GET['redirect']);
-    exit;
-  }
+  loginCheck();
 
 
   // Check if the user is already logged in, if yes then redirect him to welcome page

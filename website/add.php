@@ -1,9 +1,29 @@
+<!--
+  This page will likely need to use javascript.
+  That's ok
+
+  - Inputs include:
+    - Headline - small textbox
+    - Body - Bigger text
+    - Thumbnail - Image upload/link
+    - Blurb - bigger text
+    - sources - medium textbox
+    - tags - small textbox - add as you go - ToDo: Article-tags db
+    - location - small textbox
+
+  - If there's an error it needs to redirect back with everything still filled out.
+    - Might want to do error handling with javascript
+
+-->
+
 <?php
 
   include('php/scripts/auth/loginCheck.php');
   loginCheck();
 
+
  ?>
+<html>
 <head>
   <link rel="stylesheet" href="resources/css/navbar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
@@ -23,3 +43,4 @@
   <div>
   </div>
 </body>
+</html>
