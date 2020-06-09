@@ -39,7 +39,7 @@
 <body>
   <div class="wrapper">
     <h2>Add Article </h2>
-    <form action="php/scripts/add.php" method="post">
+    <form enctype="multipart/form-data" action="php/scripts/add.php" method="post">
       <div class="form=group">
         <label>Headline</label>
         <input type="text" name ="headline" class="form-control">
@@ -64,6 +64,9 @@
         <label>Sources</label><br />
         <textarea rows="10" cols="100" name="sources"></textarea><br />
         <span class="help-block"></span>
+      </div>
+      <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Submit">
       </div>
     </form>
   </div>

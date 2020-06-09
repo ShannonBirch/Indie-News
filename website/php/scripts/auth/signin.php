@@ -16,11 +16,6 @@ include('secure/loginTools.php');
   $redirect = $_POST['redirect'];
 
 
-
-
-
-
-
   $checkEmailSQL = "SELECT email, password
                     FROM Users
                     WHERE email='" . $email . "';";

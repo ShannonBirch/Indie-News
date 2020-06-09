@@ -34,7 +34,6 @@ echo "<nav class='navbar navbar-expand-lg navbar-dark navbar-survival101'>
                 </span>
               </div>
             </form>
-            <div class='g-signin2' data-onsuccess='onSignIn'></div>
           </div>
         </div>
 

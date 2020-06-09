@@ -1,6 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+
   //This gets the connection the mysql server
-  include('auth/Conn.php');
+  include('auth/secure/Conn.php');
   $conn = getConn();
 
   $output = "<root>"; //This is the beginning of defining an .xml file
