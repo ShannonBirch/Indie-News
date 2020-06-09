@@ -37,10 +37,35 @@
 
 </head>
 <body>
-
-
-
-  <div>
+  <div class="wrapper">
+    <h2>Add Article </h2>
+    <form action="php/scripts/add.php" method="post">
+      <div class="form=group">
+        <label>Headline</label>
+        <input type="text" name ="headline" class="form-control">
+        <span class="help-block"></span>
+      </div>
+      <div class="form=group">
+        <label>Body</label><br />
+        <textarea rows="20" cols="100" name="body"></textarea><br />
+        <span class="help-block"></span>
+      </div>
+      <div class="form=group">
+        <label>Thumbnail</label>
+        <input type="file" name ="thumbnail" class="form-control">
+        <span class="help-block"></span>
+      </div>
+      <div class="form=group">
+        <label>Blurb</label><br />
+        <textarea rows="10" cols="100" name="blurb"></textarea><br />
+        <span class="help-block"></span>
+      </div>
+      <div class="form=group">
+        <label>Sources</label><br />
+        <textarea rows="10" cols="100" name="sources"></textarea><br />
+        <span class="help-block"></span>
+      </div>
+    </form>
   </div>
 </body>
 </html>

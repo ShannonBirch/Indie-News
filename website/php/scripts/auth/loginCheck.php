@@ -31,8 +31,6 @@ function loginCheck(){
     if($result->num_rows > 0){
       $_SESSION['last_checked'] = time();
 
-      echo $reqPage[0];
-
       if( $reqPage[0] === "/login.php" ){
 
         header("Location: /");

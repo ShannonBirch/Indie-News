@@ -29,7 +29,7 @@
             <input type="hidden" name="redirect" value="<?php echo($_GET['redirect']) ?>" >
             <div class="form-group">
                 <label>Email</label>
-                <input type="text" name="email" class="form-control" >
+                <input type="email" name="email" class="form-control" >
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
