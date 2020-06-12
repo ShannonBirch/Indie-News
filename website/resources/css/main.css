@@ -8,6 +8,11 @@
   margin: 0 auto;
 }
 
+.dateName {
+  text-align:right;
+}
+
+
 a{
   color:inherit;
   text-decoration: none;
